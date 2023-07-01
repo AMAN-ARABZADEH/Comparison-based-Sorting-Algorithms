@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 
 // Function to swap two elements
@@ -293,6 +294,21 @@ void heapSort(std::vector<T>& arr) {
         maxHeapify(arr, i, 0);
     }
 }
+/**
+
+    @brief Sorts the elements in the range [first, last) using the heap sort algorithm.
+    This function uses the C++ standard library functions std::make_heap and std::sort_heap
+    to build a max heap from the range of elements and then sort them in ascending order using the heap.
+
+    @tparam RandomIt The type of the iterators representing the range.
+    @param first An iterator pointing to the first element of the range.
+    @param last An iterator pointing one past the last element of the range.
+*/
+template <typename RandomIt>
+void heapSort(RandomIt first, RandomIt last) {
+    std::make_heap(first, last); // Build a max heap from the range of elements
+    std::sort_heap(first, last); // Sort the elements in ascending order using the heap
+}
 
 /**
  * Bubble Sort:
@@ -383,47 +399,53 @@ void selectionSort(std::vector<T>& arr) {
 
 int main() {
     std::vector<int> unsorted = {5, 2, 9, 1, 7, 0, 1, 2, 3, 1, -2};
+    std::vector<std::string> names = {"Mona", "Aman", "Hamed", "Adam", "Benjamin", "Karim", "Maryam"};
 
     // Test BubbleSort
     std::vector<int> arr1 = unsorted;
     bubbleSort(arr1);
-    std::cout << "BubbleSort: ";
+    std::cout << "\nBubbleSort: \n";
     printArray(arr1);
 
     // Test InsertionSort
     std::vector<int> arr2 = unsorted;
     insertionSort(arr2);
-    std::cout << "InsertionSort: ";
+    std::cout << "\nInsertionSort: \n";
     printArray(arr2);
 
     // Test SelectionSort
     std::vector<int> arr3 = unsorted;
     selectionSort(arr3);
-    std::cout << "SelectionSort: ";
+    std::cout << "\nSelectionSort: \n";
     printArray(arr3);
 
     // Test MergeSort
     std::vector<int> arr4 = unsorted;
     mergeSort(arr4);
-    std::cout << "MergeSort: ";
+    std::cout << "\nMergeSort: \n";
     printArray(arr4);
 
     // Test HeapSort
     std::vector<int> arr5 = unsorted;
     heapSort(arr5);
-    std::cout << "HeapSort: ";
+    std::cout << "\nHeapSort: \n";
     printArray(arr5);
 
+    // Test HeapSort build in functions
+    // Function uses the C++ standard library functions std::make_heap and std::sort_heap
+    heapSort(names.begin(), names.end());
+    std::cout << "\nHeapSort STL std::make_heap and std::sort_heap: \n";
+    printArray(names);
     // Test QuickSort
     std::vector<int> arr6 = unsorted;
     quickSort(arr6, 0, arr6.size() - 1);
-    std::cout << "QuickSort: ";
+    std::cout << "\nQuickSort: \n";
     printArray(arr6);
 
     // Test QuickSort Median of Three
     std::vector<int> arr7 = unsorted;
     quickSort_Median_Of_Three(arr7, 0, arr7.size() - 1);
-    std::cout << "QuickSort Median of Three: ";
+    std::cout << "\nQuickSort Median of Three: \n";
     printArray(arr7);
 
     return 0;
