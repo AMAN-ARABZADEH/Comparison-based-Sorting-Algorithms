@@ -2,6 +2,12 @@
 #include <vector>
 #include <algorithm>
 
+/*
+ * Auther: Aman Arabzadeh
+ * Date: 2023-07-01
+ * Comparison based Sorting Algorithms
+ * https://en.wikipedia.org/wiki/Comparison_sort
+ */
 
 // Function to swap two elements
 template <typename T>
