@@ -35,6 +35,9 @@ Each algorithm has been implemented with clear comments and documentation to aid
 - Books:
   - "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein
   - "Algorithms" by Robert Sedgewick and Kevin Wayne
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 Feel free to explore the code and use it as a reference for learning and implementing sorting algorithms in your own projects.
 
